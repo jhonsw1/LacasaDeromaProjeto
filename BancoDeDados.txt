@@ -1,0 +1,429 @@
+USE [master]
+GO
+/****** Object:  Database [lacasa_roma]    Script Date: 05/12/2019 17:56:19 ******/
+CREATE DATABASE [lacasa_roma]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'lacasa_roma', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\lacasa_roma.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'lacasa_roma_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\lacasa_roma_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+GO
+ALTER DATABASE [lacasa_roma] SET COMPATIBILITY_LEVEL = 140
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [lacasa_roma].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [lacasa_roma] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [lacasa_roma] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [lacasa_roma] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [lacasa_roma] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [lacasa_roma] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [lacasa_roma] SET  MULTI_USER 
+GO
+ALTER DATABASE [lacasa_roma] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [lacasa_roma] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [lacasa_roma] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [lacasa_roma] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [lacasa_roma] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [lacasa_roma] SET QUERY_STORE = OFF
+GO
+USE [lacasa_roma]
+GO
+/****** Object:  Table [dbo].[CadastroBebida]    Script Date: 05/12/2019 17:56:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CadastroBebida](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[bebida] [varchar](30) NOT NULL,
+	[valor_Bebida] [float] NOT NULL,
+ CONSTRAINT [PK_CadastroBebida] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CadastroClientes]    Script Date: 05/12/2019 17:56:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CadastroClientes](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) NOT NULL,
+	[cidade] [varchar](30) NOT NULL,
+	[rua] [varchar](50) NOT NULL,
+	[numero] [varchar](10) NOT NULL,
+	[telefone] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_CadastroClientes] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CadastroEntregadores]    Script Date: 05/12/2019 17:56:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CadastroEntregadores](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](50) NOT NULL,
+	[placa] [varchar](11) NOT NULL,
+	[endereco] [varchar](50) NOT NULL,
+	[cpf] [varchar](11) NOT NULL,
+ CONSTRAINT [PK_CadastroEntregadores] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CadastroLanche]    Script Date: 05/12/2019 17:56:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CadastroLanche](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nome_Lanche] [varchar](30) NOT NULL,
+	[preco_Lanche] [float] NOT NULL,
+ CONSTRAINT [PK_CadastroLanche] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CadastroMesass]    Script Date: 05/12/2019 17:56:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CadastroMesass](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[capacidadeMesa] [varchar](30) NOT NULL,
+	[numeroMesa] [varchar](100) NOT NULL,
+ CONSTRAINT [PK_CadastroMesass] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[cadastroUsuario]    Script Date: 05/12/2019 17:56:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[cadastroUsuario](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](20) NOT NULL,
+	[senha] [varchar](11) NOT NULL,
+	[cpf] [varchar](11) NOT NULL,
+ CONSTRAINT [PK_cadastroUsuario] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[DetalhePedidoMesa]    Script Date: 05/12/2019 17:56:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DetalhePedidoMesa](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Numero_Mesa] [varchar](100) NOT NULL,
+	[Quantidade_Clientes] [varchar](50) NOT NULL,
+	[Obs_Pedido] [varchar](200) NOT NULL,
+	[Lanche] [varchar](50) NOT NULL,
+	[Bebida] [varchar](50) NOT NULL,
+	[Valor_Total] [float] NOT NULL,
+ CONSTRAINT [PK_DetalhePedidoMesa] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Ingredientess]    Script Date: 05/12/2019 17:56:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Ingredientess](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nome] [varchar](30) NOT NULL,
+	[preco] [float] NOT NULL,
+	[quantidade] [int] NOT NULL,
+ CONSTRAINT [PK_Ingredientess] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[mesas]    Script Date: 05/12/2019 17:56:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mesas](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[capacidade] [int] NOT NULL,
+	[disponivel] [bit] NOT NULL,
+ CONSTRAINT [PK_mesas] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PedidosMesas]    Script Date: 05/12/2019 17:56:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PedidosMesas](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Numero_Mesa] [int] NOT NULL,
+	[Quantidade_Clientes] [int] NOT NULL,
+	[Lanches_Mesa] [varchar](500) NOT NULL,
+	[bebidas_Mesa] [varchar](300) NOT NULL,
+ CONSTRAINT [PK_PedidosMesas] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[SomarPedidos]    Script Date: 05/12/2019 17:56:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[SomarPedidos](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Somar] [float] NOT NULL,
+	[Valor_Total] [float] NOT NULL,
+ CONSTRAINT [PK_SomarPedidos] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[CadastroBebida] ON 
+GO
+INSERT [dbo].[CadastroBebida] ([id], [bebida], [valor_Bebida]) VALUES (1, N'coca cola', 7.9)
+GO
+SET IDENTITY_INSERT [dbo].[CadastroBebida] OFF
+GO
+SET IDENTITY_INSERT [dbo].[CadastroClientes] ON 
+GO
+INSERT [dbo].[CadastroClientes] ([id], [nome], [cidade], [rua], [numero], [telefone]) VALUES (1, N'jhoni', N'blumenau', N'bahia', N'437', N'08738273')
+GO
+SET IDENTITY_INSERT [dbo].[CadastroClientes] OFF
+GO
+SET IDENTITY_INSERT [dbo].[CadastroEntregadores] ON 
+GO
+INSERT [dbo].[CadastroEntregadores] ([id], [nome], [placa], [endereco], [cpf]) VALUES (4, N'Leticia Kistner', N'pml-8764', N'Rodrigues Alves', N'089723')
+GO
+SET IDENTITY_INSERT [dbo].[CadastroEntregadores] OFF
+GO
+SET IDENTITY_INSERT [dbo].[CadastroLanche] ON 
+GO
+INSERT [dbo].[CadastroLanche] ([id], [nome_Lanche], [preco_Lanche]) VALUES (2, N'x salada', 13.5)
+GO
+SET IDENTITY_INSERT [dbo].[CadastroLanche] OFF
+GO
+SET IDENTITY_INSERT [dbo].[CadastroMesass] ON 
+GO
+INSERT [dbo].[CadastroMesass] ([id], [capacidadeMesa], [numeroMesa]) VALUES (4, N'1', N'4')
+GO
+INSERT [dbo].[CadastroMesass] ([id], [capacidadeMesa], [numeroMesa]) VALUES (5, N'4', N'1')
+GO
+INSERT [dbo].[CadastroMesass] ([id], [capacidadeMesa], [numeroMesa]) VALUES (6, N'4', N'2')
+GO
+INSERT [dbo].[CadastroMesass] ([id], [capacidadeMesa], [numeroMesa]) VALUES (7, N'4', N'3')
+GO
+INSERT [dbo].[CadastroMesass] ([id], [capacidadeMesa], [numeroMesa]) VALUES (8, N'8', N'35')
+GO
+INSERT [dbo].[CadastroMesass] ([id], [capacidadeMesa], [numeroMesa]) VALUES (9, N'10', N'5')
+GO
+INSERT [dbo].[CadastroMesass] ([id], [capacidadeMesa], [numeroMesa]) VALUES (10, N'15', N'36')
+GO
+SET IDENTITY_INSERT [dbo].[CadastroMesass] OFF
+GO
+SET IDENTITY_INSERT [dbo].[cadastroUsuario] ON 
+GO
+INSERT [dbo].[cadastroUsuario] ([id], [nome], [senha], [cpf]) VALUES (10, N'jhons', N'123', N'07851')
+GO
+INSERT [dbo].[cadastroUsuario] ([id], [nome], [senha], [cpf]) VALUES (11, N'marco', N'123', N'07850')
+GO
+INSERT [dbo].[cadastroUsuario] ([id], [nome], [senha], [cpf]) VALUES (12, N'gabriel', N'123', N'07852')
+GO
+INSERT [dbo].[cadastroUsuario] ([id], [nome], [senha], [cpf]) VALUES (13, N'adm', N'123', N'07859')
+GO
+INSERT [dbo].[cadastroUsuario] ([id], [nome], [senha], [cpf]) VALUES (14, N'adm1', N'123', N'07856')
+GO
+INSERT [dbo].[cadastroUsuario] ([id], [nome], [senha], [cpf]) VALUES (16, N'ricardo', N'123', N'07857')
+GO
+SET IDENTITY_INSERT [dbo].[cadastroUsuario] OFF
+GO
+SET IDENTITY_INSERT [dbo].[DetalhePedidoMesa] ON 
+GO
+INSERT [dbo].[DetalhePedidoMesa] ([id], [Numero_Mesa], [Quantidade_Clientes], [Obs_Pedido], [Lanche], [Bebida], [Valor_Total]) VALUES (1, N'4', N'5', N'sdfsfswdfgsd', N'x salada', N'coca cola', 176.8)
+GO
+INSERT [dbo].[DetalhePedidoMesa] ([id], [Numero_Mesa], [Quantidade_Clientes], [Obs_Pedido], [Lanche], [Bebida], [Valor_Total]) VALUES (2, N'5', N'10', N'x salada e uma coca 2 litros', N'x salada', N'coca cola', 198.20000000000002)
+GO
+SET IDENTITY_INSERT [dbo].[DetalhePedidoMesa] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Ingredientess] ON 
+GO
+INSERT [dbo].[Ingredientess] ([id], [nome], [preco], [quantidade]) VALUES (2, N'tomate', 0.5, 20)
+GO
+SET IDENTITY_INSERT [dbo].[Ingredientess] OFF
+GO
+SET IDENTITY_INSERT [dbo].[mesas] ON 
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (1, 2, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (2, 4, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (3, 4, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (4, 5, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (5, 10, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (6, 6, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (7, 10, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (8, 20, 0)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (9, 4, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (10, 4, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (11, 6, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (12, 8, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (13, 10, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (14, 20, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (15, 4, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (16, 8, 0)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (17, 2, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (18, 2, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (19, 2, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (20, 10, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (21, 6, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (22, 4, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (23, 4, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (24, 4, 0)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (25, 4, 1)
+GO
+INSERT [dbo].[mesas] ([id], [capacidade], [disponivel]) VALUES (26, 4, 0)
+GO
+SET IDENTITY_INSERT [dbo].[mesas] OFF
+GO
+SET IDENTITY_INSERT [dbo].[SomarPedidos] ON 
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (1, 7.9, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (2, 13.5, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (3, 13.5, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (4, 7.9, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (5, 13.5, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (6, 7.9, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (7, 13.5, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (8, 7.9, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (9, 13.5, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (10, 13.5, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (11, 13.5, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (12, 7.9, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (13, 13.5, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (14, 7.9, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (15, 13.5, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (16, 7.9, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (17, 13.5, 0)
+GO
+INSERT [dbo].[SomarPedidos] ([id], [Somar], [Valor_Total]) VALUES (18, 7.9, 0)
+GO
+SET IDENTITY_INSERT [dbo].[SomarPedidos] OFF
+GO
+USE [master]
+GO
+ALTER DATABASE [lacasa_roma] SET  READ_WRITE 
+GO

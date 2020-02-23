@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="lacasa_romaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CadastroBebida">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bebida" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="valor_Bebida" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CadastroClientes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cidade" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="rua" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numero" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="telefone" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CadastroEntregadores">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="placa" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="endereco" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cpf" Type="varchar" MaxLength="11" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CadastroLanche">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome_Lanche" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="preco_Lanche" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CadastroMesass">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="capacidadeMesa" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="numeroMesa" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cadastroUsuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="senha" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="cpf" Type="varchar" MaxLength="11" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalhePedidoMesa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Numero_Mesa" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Quantidade_Clientes" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Obs_Pedido" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Lanche" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Bebida" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Valor_Total" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ingredientess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="preco" Type="float" Nullable="false" />
+    <Property Name="quantidade" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mesas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="capacidade" Type="int" Nullable="false" />
+    <Property Name="disponivel" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PedidosMesas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Numero_Mesa" Type="int" Nullable="false" />
+    <Property Name="Quantidade_Clientes" Type="int" Nullable="false" />
+    <Property Name="Lanches_Mesa" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="bebidas_Mesa" Type="varchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SomarPedidos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Somar" Type="float" Nullable="false" />
+    <Property Name="Valor_Total" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityContainer Name="lacasa_romaModelStoreContainer">
+    <EntitySet Name="CadastroBebida" EntityType="Self.CadastroBebida" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CadastroClientes" EntityType="Self.CadastroClientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CadastroEntregadores" EntityType="Self.CadastroEntregadores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CadastroLanche" EntityType="Self.CadastroLanche" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CadastroMesass" EntityType="Self.CadastroMesass" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cadastroUsuario" EntityType="Self.cadastroUsuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetalhePedidoMesa" EntityType="Self.DetalhePedidoMesa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ingredientess" EntityType="Self.Ingredientess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesas" EntityType="Self.mesas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PedidosMesas" EntityType="Self.PedidosMesas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SomarPedidos" EntityType="Self.SomarPedidos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

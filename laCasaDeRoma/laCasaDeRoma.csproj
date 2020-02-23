@@ -1,0 +1,832 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C2632A32-CE71-49D3-BB70-3EBA6ADFF0D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>laCasaDeRoma</RootNamespace>
+    <AssemblyName>laCasaDeRoma</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bebidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bebidas.Designer.cs">
+      <DependentUpon>Bebidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarUsuario.Designer.cs">
+      <DependentUpon>CadastrarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroBebida.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroClientes.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroEntregadores.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroIngredientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroIngredientes.Designer.cs">
+      <DependentUpon>CadastroIngredientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroLanche.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroMesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroMesas.Designer.cs">
+      <DependentUpon>CadastroMesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroMesass.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cadastroUsuario.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DetalhePedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalhePedido.Designer.cs">
+      <DependentUpon>DetalhePedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetalhePedidoMesa.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ingredientess.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ingredientess.Designer.cs">
+      <DependentUpon>Ingredientess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet19.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet20.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet20.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet22.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet22.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet23.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet23.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet24.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet24.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet25.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet25.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet26.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet26.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet27.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet27.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet28.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet28.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet29.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet29.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet30.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet30.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet31.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet32.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet32.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet33.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet33.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="lacasa_romaDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lacasa_romaDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Lanches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lanches.Designer.cs">
+      <DependentUpon>Lanches.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mesas.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosGeralMesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedidosGeralMesas.Designer.cs">
+      <DependentUpon>PedidosGeralMesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosMesas.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Produtos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produtos.Designer.cs">
+      <DependentUpon>Produtos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReservaMesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservaMesas.Designer.cs">
+      <DependentUpon>ReservaMesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SomarPedidos.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TelaLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaLog.Designer.cs">
+      <DependentUpon>TelaLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperarConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecuperarConta.Designer.cs">
+      <DependentUpon>RecuperarConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TelaMotoboy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaMotoboy.Designer.cs">
+      <DependentUpon>TelaMotoboy.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Bebidas.resx">
+      <DependentUpon>Bebidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastrarUsuario.resx">
+      <DependentUpon>CadastrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroIngredientes.resx">
+      <DependentUpon>CadastroIngredientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroMesas.resx">
+      <DependentUpon>CadastroMesas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalhePedido.resx">
+      <DependentUpon>DetalhePedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ingredientess.resx">
+      <DependentUpon>Ingredientess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lanches.resx">
+      <DependentUpon>Lanches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PedidosGeralMesas.resx">
+      <DependentUpon>PedidosGeralMesas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produtos.resx">
+      <DependentUpon>Produtos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservaMesas.resx">
+      <DependentUpon>ReservaMesas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecuperarConta.resx">
+      <DependentUpon>RecuperarConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaLog.resx">
+      <DependentUpon>TelaLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TelaMotoboy.resx">
+      <DependentUpon>TelaMotoboy.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="lacasa_romaDataSet.xsc">
+      <DependentUpon>lacasa_romaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet.xss">
+      <DependentUpon>lacasa_romaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet1.xsc">
+      <DependentUpon>lacasa_romaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet1.xss">
+      <DependentUpon>lacasa_romaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet10.xsc">
+      <DependentUpon>lacasa_romaDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet10.xss">
+      <DependentUpon>lacasa_romaDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet11.xsc">
+      <DependentUpon>lacasa_romaDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet11.xss">
+      <DependentUpon>lacasa_romaDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet12.xsc">
+      <DependentUpon>lacasa_romaDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet12.xss">
+      <DependentUpon>lacasa_romaDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet13.xsc">
+      <DependentUpon>lacasa_romaDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet13.xss">
+      <DependentUpon>lacasa_romaDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet14.xsc">
+      <DependentUpon>lacasa_romaDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet14.xss">
+      <DependentUpon>lacasa_romaDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet15.xsc">
+      <DependentUpon>lacasa_romaDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet15.xss">
+      <DependentUpon>lacasa_romaDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet16.xsc">
+      <DependentUpon>lacasa_romaDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet16.xss">
+      <DependentUpon>lacasa_romaDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet17.xsc">
+      <DependentUpon>lacasa_romaDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet17.xss">
+      <DependentUpon>lacasa_romaDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet18.xsc">
+      <DependentUpon>lacasa_romaDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet18.xss">
+      <DependentUpon>lacasa_romaDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet19.xsc">
+      <DependentUpon>lacasa_romaDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet19.xss">
+      <DependentUpon>lacasa_romaDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet2.xsc">
+      <DependentUpon>lacasa_romaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet2.xss">
+      <DependentUpon>lacasa_romaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet20.xsc">
+      <DependentUpon>lacasa_romaDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet20.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet20.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet20.xss">
+      <DependentUpon>lacasa_romaDataSet20.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet21.xsc">
+      <DependentUpon>lacasa_romaDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet21.xss">
+      <DependentUpon>lacasa_romaDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet22.xsc">
+      <DependentUpon>lacasa_romaDataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet22.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet22.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet22.xss">
+      <DependentUpon>lacasa_romaDataSet22.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet23.xsc">
+      <DependentUpon>lacasa_romaDataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet23.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet23.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet23.xss">
+      <DependentUpon>lacasa_romaDataSet23.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet24.xsc">
+      <DependentUpon>lacasa_romaDataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet24.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet24.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet24.xss">
+      <DependentUpon>lacasa_romaDataSet24.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet25.xsc">
+      <DependentUpon>lacasa_romaDataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet25.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet25.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet25.xss">
+      <DependentUpon>lacasa_romaDataSet25.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet26.xsc">
+      <DependentUpon>lacasa_romaDataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet26.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet26.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet26.xss">
+      <DependentUpon>lacasa_romaDataSet26.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet27.xsc">
+      <DependentUpon>lacasa_romaDataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet27.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet27.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet27.xss">
+      <DependentUpon>lacasa_romaDataSet27.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet28.xsc">
+      <DependentUpon>lacasa_romaDataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet28.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet28.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet28.xss">
+      <DependentUpon>lacasa_romaDataSet28.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet29.xsc">
+      <DependentUpon>lacasa_romaDataSet29.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet29.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet29.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet29.xss">
+      <DependentUpon>lacasa_romaDataSet29.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet3.xsc">
+      <DependentUpon>lacasa_romaDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet3.xss">
+      <DependentUpon>lacasa_romaDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet30.xsc">
+      <DependentUpon>lacasa_romaDataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet30.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet30.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet30.xss">
+      <DependentUpon>lacasa_romaDataSet30.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet31.xsc">
+      <DependentUpon>lacasa_romaDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet31.xss">
+      <DependentUpon>lacasa_romaDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet32.xsc">
+      <DependentUpon>lacasa_romaDataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet32.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet32.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet32.xss">
+      <DependentUpon>lacasa_romaDataSet32.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet33.xsc">
+      <DependentUpon>lacasa_romaDataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet33.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet33.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet33.xss">
+      <DependentUpon>lacasa_romaDataSet33.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet4.xsc">
+      <DependentUpon>lacasa_romaDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet4.xss">
+      <DependentUpon>lacasa_romaDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet5.xsc">
+      <DependentUpon>lacasa_romaDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet5.xss">
+      <DependentUpon>lacasa_romaDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet6.xsc">
+      <DependentUpon>lacasa_romaDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet6.xss">
+      <DependentUpon>lacasa_romaDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet7.xsc">
+      <DependentUpon>lacasa_romaDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet7.xss">
+      <DependentUpon>lacasa_romaDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet8.xsc">
+      <DependentUpon>lacasa_romaDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet8.xss">
+      <DependentUpon>lacasa_romaDataSet8.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="lacasa_romaDataSet9.xsc">
+      <DependentUpon>lacasa_romaDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="lacasa_romaDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lacasa_romaDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lacasa_romaDataSet9.xss">
+      <DependentUpon>lacasa_romaDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\dinner-icon.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+</Project>

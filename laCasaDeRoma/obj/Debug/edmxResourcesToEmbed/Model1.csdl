@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="lacasa_romaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CadastroClientes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cidade" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rua" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numero" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CadastroEntregadores">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="placa" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cpf" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CadastroLanche">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome_Lanche" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="preco_Lanche" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cadastroUsuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="senha" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cpf" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="lacasa_romaEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CadastroClientes" EntityType="Self.CadastroClientes" />
+    <EntitySet Name="CadastroEntregadores" EntityType="Self.CadastroEntregadores" />
+    <EntitySet Name="CadastroLanche" EntityType="Self.CadastroLanche" />
+    <EntitySet Name="cadastroUsuario" EntityType="Self.cadastroUsuario" />
+    <EntitySet Name="Ingredientess" EntityType="lacasa_romaModel.Ingredientess" />
+    <EntitySet Name="CadastroBebida" EntityType="lacasa_romaModel.CadastroBebida" />
+    <EntitySet Name="mesas" EntityType="lacasa_romaModel.mesas" />
+    <EntitySet Name="CadastroMesass" EntityType="lacasa_romaModel.CadastroMesass" />
+    <EntitySet Name="PedidosMesas" EntityType="lacasa_romaModel.PedidosMesas" />
+    <EntitySet Name="sysdiagrams" EntityType="lacasa_romaModel.sysdiagrams" />
+    <EntitySet Name="SomarPedidos" EntityType="lacasa_romaModel.SomarPedidos" />
+    <EntitySet Name="DetalhePedidoMesa" EntityType="lacasa_romaModel.DetalhePedidoMesa" />
+  </EntityContainer>
+  <EntityType Name="Ingredientess">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="preco" Type="Double" Nullable="false" />
+    <Property Name="quantidade" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CadastroBebida">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bebida" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="valor_Bebida" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mesas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="capacidade" Type="Int32" Nullable="false" />
+    <Property Name="disponivel" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CadastroMesass">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="capacidadeMesa" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="numeroMesa" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PedidosMesas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Numero_Mesa" Type="Int32" Nullable="false" />
+    <Property Name="Quantidade_Clientes" Type="Int32" Nullable="false" />
+    <Property Name="Lanches_Mesa" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="bebidas_Mesa" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SomarPedidos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Somar" Type="Double" Nullable="false" />
+    <Property Name="Valor_Total" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalhePedidoMesa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Numero_Mesa" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Quantidade_Clientes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Obs_Pedido" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Lanche" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bebida" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Valor_Total" Type="Double" Nullable="false" />
+  </EntityType>
+</Schema>

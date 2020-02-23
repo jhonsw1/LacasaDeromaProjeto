@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="lacasa_romaModelStoreContainer" CdmEntityContainer="lacasa_romaEntities">
+    <EntitySetMapping Name="cadastroUsuario">
+      <EntityTypeMapping TypeName="lacasa_romaModel.cadastroUsuario">
+        <MappingFragment StoreEntitySet="cadastroUsuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CadastroMesass">
+      <EntityTypeMapping TypeName="lacasa_romaModel.CadastroMesass">
+        <MappingFragment StoreEntitySet="CadastroMesass">
+          <ScalarProperty Name="numeroMesa" ColumnName="numeroMesa" />
+          <ScalarProperty Name="capacidadeMesa" ColumnName="capacidadeMesa" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CadastroEntregadores">
+      <EntityTypeMapping TypeName="lacasa_romaModel.CadastroEntregadores">
+        <MappingFragment StoreEntitySet="CadastroEntregadores">
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="endereco" ColumnName="endereco" />
+          <ScalarProperty Name="placa" ColumnName="placa" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ingredientes">
+      <EntityTypeMapping TypeName="lacasa_romaModel.Ingredientes">
+        <MappingFragment StoreEntitySet="Ingredientes">
+          <ScalarProperty Name="quantidade" ColumnName="quantidade" />
+          <ScalarProperty Name="preco" ColumnName="preco" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CadastroClientes">
+      <EntityTypeMapping TypeName="lacasa_romaModel.CadastroClientes">
+        <MappingFragment StoreEntitySet="CadastroClientes">
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="rua" ColumnName="rua" />
+          <ScalarProperty Name="cidade" ColumnName="cidade" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CadastroLanche">
+      <EntityTypeMapping TypeName="lacasa_romaModel.CadastroLanche">
+        <MappingFragment StoreEntitySet="CadastroLanche">
+          <ScalarProperty Name="preco_Lanche" ColumnName="preco_Lanche" />
+          <ScalarProperty Name="nome_Lanche" ColumnName="nome_Lanche" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
